@@ -1,7 +1,7 @@
 /*start with the rightmost of the 2 numbers
 remember to convert to int while doing operations
 so keep adding to int c by converting to int(- 0 ki ascii value)
-the final ans by adding c%2 but this gives the reverse ans
+the final ans by adding c%2 but this gives the reverse ans.
 also do c=c/2
 then finally reverse the ans using the inbuilt function.
 */
