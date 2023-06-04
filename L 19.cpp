@@ -22,3 +22,28 @@ public:
         return head;
     }
 };
+
+//Another
+
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        if(head==NULL || head->next==NULL)return NULL;
+        ListNode* p=head;
+        ListNode* q=head;
+        while(n){                          //no need to count total length then
+            p=p->next;
+            n--;
+        }
+        if(p==NULL)return head->next;
+        ListNode* c=head->next;
+        while(p && p->next){
+            p=p->next;
+            q=q->next;
+            c=c->next;
+        }
+        q->next=c->next;
+        c->next=NULL;
+        return head;
+    }
+};
