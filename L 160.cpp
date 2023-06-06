@@ -11,3 +11,38 @@ public:
         return a;
     }
 };
+
+//simpler
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        ListNode* p=headA;
+        ListNode* q=headB;
+        int n=0;
+        int m=0;
+        while(p){
+            p=p->next;
+            n++;
+        }
+        while(q){
+            q=q->next;
+            m++;
+        }
+        
+        if(m>n){
+            while(m>n){
+                headB=headB->next;
+                m--;
+            }
+        }
+        else if(m<n){
+            while(m<n){headA=headA->next; n--;}
+        }
+        while(headA && headB){
+            if(headA==headB) return headA;
+            headA = headA->next;
+            headB = headB->next;
+        }
+        return NULL;
+    }
+};
